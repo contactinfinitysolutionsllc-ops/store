@@ -91,7 +91,7 @@ footer a{color:var(--accent2);text-decoration:none}
 <nav>
   <a href="https://infinityhub.dev" class="logo">Infinity<em>.</em>Solutions</a>
   <div class="nav-right">
-    <a href="https://infinityhub.dev" class="nav-back">← Back to hub</a>
+    <a href="https://infinityhub.dev" class="nav-back">← Hub</a>
     <span class="nav-badge">Digital Store</span>
   </div>
 </nav>
@@ -249,7 +249,7 @@ footer a{color:var(--accent2);text-decoration:none}
 
   </div>
 
-  <p style="text-align:center;font-size:.78rem;color:var(--muted);margin-top:2rem">More products added regularly · <a href="/cdn-cgi/l/email-protection#fd9e9293899c9e89d394939b94939489848e929188899492938e91919ebd9a909c9491d39e9290" style="color:var(--accent2);text-decoration:none">Request a custom kit →</a></p>
+  <p style="text-align:center;font-size:.78rem;color:var(--muted);margin-top:2rem">More products added regularly · <a href="https://contact.infinityhub.dev">Contact Us</a></p>
 
 </div>
 
@@ -261,11 +261,22 @@ footer a{color:var(--accent2);text-decoration:none}
 </div>
 
 <footer>
-  <p>© 2025 <a href="https://infinityhub.dev">Infinity Solutions LLC</a> · All Rights Reserved · Delivered via Gumroad</p>
+  <p>© 2025 <a href="https://infinityhub.dev">Infinity Solutions LLC</a> · All Rights Reserved · Delivered via Gumroad · <a href="https://contact.infinityhub.dev">Support</a> · <a href="https://contactinfinitysolutionsllc-ops.github.io/terms/">Terms</a></p>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 function filter(cat, btn) {
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
-  document.query
+  document.querySelectorAll('.product-card, .pcard').forEach(card => {
+    if (cat === 'all' || card.dataset.cat === cat || card.dataset.category === cat) {
+      card.style.display = '';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+</script>
+<script src="https://contactinfinitysolutionsllc-ops.github.io/account/ig-account.js"></script>
+</body>
+</html>
