@@ -277,6 +277,19 @@ function filter(cat, btn) {
   });
 }
 </script>
+<script>
+// ── SESSION AUTH ─────────────────────────────────────────────────────────
+function getStoredSession() {
+  const token = localStorage.getItem('ig_account_token');
+  const email = localStorage.getItem('ig_account_email');
+  if (!token || !email) return null;
+  try {
+    const p = JSON.parse(atob(token.split('.')[1]));
+    if (p.exp && Date.now()/1000 > p.exp) { localStorage.removeItem('ig_account_token'); return null; }
+  } catch(e) { return null; }
+  return { token, email };
+}
+</script>
 <script src="https://contactinfinitysolutionsllc-ops.github.io/account/ig-account.js"></script>
 </body>
 </html>
